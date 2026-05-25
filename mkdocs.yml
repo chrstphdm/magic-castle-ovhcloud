@@ -1,0 +1,47 @@
+site_name: Magic Castle on OVHcloud
+site_url: https://chrstphdm.github.io/magic-castle-ovhcloud
+repo_url: https://github.com/chrstphdm/magic-castle-ovhcloud
+repo_name: chrstphdm/magic-castle-ovhcloud
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - admonition
+
+nav:
+  - Home: index.md
+  - Prerequisites: 01-prerequisites.md
+  - Architecture: 02-architecture.md
+  - Network Setup: 03-network-setup.md
+  - main.tf Walkthrough: 04-main-tf.md
+  - OVHcloud Specifics: 05-ovhcloud-specifics.md
+  - Bioinformatics Stack: 06-bioinfo-stack.md
+  - SLURM Tuning: 07-slurm-tuning.md
+  - Nextflow on Magic Castle: 08-nextflow.md
+  - Deploy and Destroy: 09-deployment.md
+  - Troubleshooting: 10-troubleshooting.md
