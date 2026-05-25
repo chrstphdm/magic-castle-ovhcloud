@@ -56,6 +56,23 @@ Before starting, make sure you have:
 
 ---
 
+## About this guide
+
+This guide was written by [Christophe Demay](https://chrstphdm.github.io/), a senior
+bioinformatics consultant with experience deploying Magic Castle clusters on OVHcloud
+for genomics workloads.
+
+The content is based on reading the official Magic Castle and OVHcloud documentation,
+hands-on testing, and lessons learned from real production deployments. Every code
+example and configuration snippet in this guide has been written from scratch using
+publicly available documentation. No proprietary code or client-specific material is
+included.
+
+The friction points, workarounds, and recommendations reflect personal experience and
+are shared to help the community avoid the same pitfalls.
+
+---
+
 ## Quick links
 
 - [Magic Castle GitHub](https://github.com/ComputeCanada/magic_castle)

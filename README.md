@@ -10,7 +10,9 @@ Community guide for deploying a SLURM HPC cluster on OVHcloud using
 ## What this guide covers
 
 Magic Castle officially supports OVHcloud but the documentation leaves gaps.
-This guide fills them based on real production deployments.
+This guide fills them based on reading the official docs, hands-on testing, and
+lessons learned from real production deployments. All code examples and configurations
+are written from scratch using publicly available documentation.
 
 Topics covered:
 - Account setup and quota management
