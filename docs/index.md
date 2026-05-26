@@ -5,14 +5,33 @@ A community guide for deploying a SLURM HPC cluster on OVHcloud using
 
 ---
 
-## What this guide is
+## Why this guide exists
+
+I've been deploying Magic Castle clusters on OVHcloud for years — for genomics pipelines,
+bioinformatics platforms, and production HPC workloads. Every time, I hit the same walls:
+scattered documentation, OVHcloud-specific quirks that nobody writes about, and hours lost
+to problems that a single paragraph could have prevented.
+
+This guide is the result of that accumulated experience. It's the document I wish I'd had
+on day one.
+
+**What you'll find here** is a mix of two things:
+
+1. **The essentials from official docs, consolidated in one place.** Magic Castle, OVHcloud,
+   OpenStack, Terraform, SLURM — the relevant bits from each, assembled into a single
+   coherent walkthrough instead of five browser tabs.
+
+2. **The things that aren't in any official doc.** The network setup that must happen
+   *before* `terraform apply`. The volume types that silently don't work. The flavor naming
+   inconsistencies across regions. The SLURM tuning that turns a demo cluster into a
+   production one. These are lessons learned the hard way, over many deployments and many
+   hours of debugging.
 
 Magic Castle is a Terraform-based tool that deploys a fully configured SLURM cluster on
 cloud infrastructure. It handles node provisioning, network setup, shared storage, user
-management, and software stack configuration — in one `terraform apply`.
-
-OVHcloud is an officially supported provider, but the existing documentation leaves several
-gaps that will cost you hours. This guide fills them.
+management, and software stack configuration — in one `terraform apply`. OVHcloud is an
+officially supported provider, but the existing documentation leaves several gaps. This
+guide fills them.
 
 ---
 
@@ -56,20 +75,21 @@ Before starting, make sure you have:
 
 ---
 
-## About this guide
+## About the author
 
-This guide was written by [Christophe Demay](https://chrstphdm.github.io/), a senior
-bioinformatics consultant with experience deploying Magic Castle clusters on OVHcloud
-for genomics workloads.
+I'm [Christophe Demay](https://chrstphdm.github.io/), a senior bioinformatics consultant.
+I've spent years building and operating HPC clusters on OVHcloud for genomics and
+bioinformatics workloads — from proof-of-concept setups to production platforms running
+large-scale Nextflow pipelines.
 
-The content is based on reading the official Magic Castle and OVHcloud documentation,
-hands-on testing, and lessons learned from real production deployments. Every code
-example and configuration snippet in this guide has been written from scratch using
-publicly available documentation. No proprietary code or client-specific material is
-included.
+This guide condenses everything I've learned into a single resource: the tips, the
+workarounds, the configuration choices that actually matter, and the mistakes you don't
+need to repeat. Every code example and configuration snippet has been written from scratch
+using publicly available documentation — no proprietary code or client-specific material
+is included.
 
-The friction points, workarounds, and recommendations reflect personal experience and
-are shared to help the community avoid the same pitfalls.
+I wrote this because the community deserves a straightforward path from zero to a working
+cluster, without the hours of trial and error I went through.
 
 ---
 
