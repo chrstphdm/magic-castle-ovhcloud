@@ -156,6 +156,53 @@ Note: you continue paying for attached volumes and the floating IP while suspend
 
 ---
 
+## Terraform state management
+
+Terraform tracks every cloud resource it creates in a **state file** (`terraform.tfstate`).
+If you lose this file, Terraform no longer knows what it deployed — you end up with
+orphaned resources (VMs, volumes, floating IPs) still running and billing, with no way
+to destroy them cleanly.
+
+### Back up the state
+
+At a minimum, copy your state file after every `apply` or `destroy`:
+
+```bash
+cp terraform.tfstate terraform.tfstate.backup.$(date +%Y%m%d-%H%M%S)
+```
+
+### Use a remote backend (recommended for teams)
+
+For shared clusters or any deployment you cannot afford to lose, store the state in a
+remote backend with locking:
+
+```hcl
+terraform {
+  backend "s3" {
+    bucket   = "my-tfstate-bucket"
+    key      = "magic-castle/terraform.tfstate"
+    region   = "gra"
+    endpoint = "https://s3.gra.perf.cloud.ovh.net"
+
+    skip_credentials_validation = true
+    skip_region_validation      = true
+    skip_metadata_api_check     = true
+  }
+}
+```
+
+This uses OVHcloud Object Storage as an S3-compatible backend. Benefits:
+
+- **No local file to lose** — state is stored remotely and survives laptop failures
+- **Locking** — prevents two people from running `terraform apply` simultaneously
+- **Versioning** — if you enable bucket versioning, you can roll back to a previous state
+
+> **If you already lost your state**: the resources still exist in OVHcloud. List them
+> with `openstack server list`, `openstack volume list`, `openstack floating ip list`,
+> and delete them manually via the CLI or the OVHcloud Control Panel.
+
+---
+
 ## Destroying the cluster
 
 ```bash
