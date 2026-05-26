@@ -87,12 +87,20 @@ Nextflow pulls the Docker image and converts it to an Apptainer `.sif` file on f
 ### Using S3 as pipeline input/output
 
 If your reference data and input files are in OVHcloud Object Storage (mounted via
-S3FS or accessed directly), configure Nextflow's S3 support:
+S3FS or accessed directly), configure Nextflow's S3 support.
+
+**Set credentials via environment variables** (never hardcode them in config files):
+
+```bash
+export AWS_ACCESS_KEY_ID=<your-ovhcloud-s3-access-key>
+export AWS_SECRET_ACCESS_KEY=<your-ovhcloud-s3-secret-key>
+```
+
+Nextflow picks these up automatically. Then configure the S3 endpoint in
+`nextflow.config`:
 
 ```groovy
 aws {
-    accessKey = '<your-ovhcloud-s3-access-key>'
-    secretKey = '<your-ovhcloud-s3-secret-key>'
     client {
         endpoint = 'https://s3.gra.perf.cloud.ovh.net'
         s3PathStyleAccess = true   // required for OVHcloud — path-style, not virtual-hosted
@@ -100,13 +108,9 @@ aws {
 }
 ```
 
-> **Security**: do not hardcode credentials in `nextflow.config`. Use environment
-> variables instead:
-> ```bash
-> export AWS_ACCESS_KEY_ID=<key>
-> export AWS_SECRET_ACCESS_KEY=<secret>
-> ```
-> Nextflow picks these up automatically.
+> **Do not put `accessKey` / `secretKey` in `nextflow.config`.**
+> Config files end up in version control, shared directories, and Nextflow's
+> `.nextflow.log`. Environment variables keep credentials out of all three.
 
 ### S3 as working directory
 
