@@ -31,18 +31,21 @@ set by sourcing your OpenStack RC file.
 
 ```hcl
 module "magic_castle" {
-  source = "git::https://github.com/ComputeCanada/magic_castle.git//ovh?ref=main"
+  source = "git::https://github.com/ComputeCanada/magic_castle.git//ovh?ref=12.2.0"
 
   config_git_url = "https://github.com/ComputeCanada/puppet-magic_castle.git"
-  config_version = "main"
+  config_version = "12.2.0"
 ```
 
+> **Always pin to a release tag.** Using `?ref=main` points to the development branch —
+> a breaking change pushed upstream will silently break your next `terraform apply`. Pin
+> both `source` and `config_version` to the same release tag.
+
 - `source`: pulls the OVHcloud-specific Magic Castle Terraform module directly from GitHub.
-  Pin to a tag (e.g. `?ref=13.3.0`) for reproducibility.
 - `config_git_url`: the Puppet configuration repository. This is where the software stack
   is defined. To add Nextflow, Apptainer, and S3FS, you replace this with a fork.
   See [Bioinformatics stack](06-bioinfo-stack.md).
-- `config_version`: the branch or tag to use in the Puppet repo.
+- `config_version`: the branch or tag to use in the Puppet repo. Must match the `source` tag.
 
 ---
 
@@ -216,10 +219,10 @@ terraform {
 }
 
 module "magic_castle" {
-  source = "git::https://github.com/ComputeCanada/magic_castle.git//ovh?ref=main"
+  source = "git::https://github.com/ComputeCanada/magic_castle.git//ovh?ref=12.2.0"
 
   config_git_url = "https://github.com/ComputeCanada/puppet-magic_castle.git"
-  config_version = "main"
+  config_version = "12.2.0"
 
   cluster_name = "mycluster"
   domain       = "example.com"
