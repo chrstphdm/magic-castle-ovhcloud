@@ -31,12 +31,6 @@ on day one.
    production one. These are lessons learned the hard way, over many deployments and many
    hours of debugging.
 
-Magic Castle is a Terraform-based tool that deploys a fully configured SLURM cluster on
-cloud infrastructure. It handles node provisioning, network setup, shared storage, user
-management, and software stack configuration — in one `terraform apply`. OVHcloud is an
-officially supported provider, but the existing documentation leaves several gaps. This
-guide fills them.
-
 ---
 
 ## Who this is for
@@ -54,7 +48,7 @@ each node type does, and what configuration choices matter for a bioinformatics 
 Before starting, make sure you have:
 
 - [ ] An OVHcloud Public Cloud project (not a dedicated server — the Public Cloud section)
-- [ ] A project with sufficient [quotas](#quotas) (vCPUs, RAM, volumes, floating IPs)
+- [ ] A project with sufficient [quotas](01-prerequisites.md#quotas) (vCPUs, RAM, volumes, floating IPs)
 - [ ] An SSH key pair registered in the OVHcloud console
 - [ ] [Terraform](https://developer.hashicorp.com/terraform/install) ≥ 1.5.7 installed locally
 - [ ] The OpenStack RC File **v3** downloaded from your OVHcloud project

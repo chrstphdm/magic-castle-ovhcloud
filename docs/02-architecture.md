@@ -85,7 +85,7 @@ OVHcloud Object Storage is S3-compatible and can be mounted on the cluster using
 This is the recommended approach for large reference databases and output data that
 outlive the cluster.
 
-See [Bioinformatics stack](06-bioinfo-stack.md#s3fs) for mounting configuration.
+See [Bioinformatics stack](06-bioinfo-stack.md#s3fs-mounting-ovhcloud-object-storage) for mounting configuration.
 
 ---
 
