@@ -42,6 +42,20 @@ markdown_extensions:
   - tables
   - admonition
 
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://chrstphdm.github.io/
+      name: Christophe Demay — Bioinformatics Consultant
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/christophedemay
+    - icon: fontawesome/brands/github
+      link: https://github.com/chrstphdm
+
+copyright: >-
+  &copy; 2026 <a href="https://chrstphdm.github.io/">Christophe Demay</a> —
+  Licensed under CC BY 4.0
+
 nav:
   - Home: index.md
   - Prerequisites: 01-prerequisites.md
