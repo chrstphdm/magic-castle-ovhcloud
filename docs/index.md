@@ -3,6 +3,10 @@
 A community guide for deploying a SLURM HPC cluster on OVHcloud using
 [Magic Castle](https://github.com/ComputeCanada/magic_castle).
 
+> **Tested with Magic Castle 12.2.0** on OVHcloud regions GRA and SBG.
+> If you use a different version, some configuration options or behavior may differ —
+> check the [Magic Castle changelog](https://github.com/ComputeCanada/magic_castle/releases).
+
 ---
 
 ## Why this guide exists
