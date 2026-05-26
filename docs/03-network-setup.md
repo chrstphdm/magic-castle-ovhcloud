@@ -56,6 +56,8 @@ resource "openstack_networking_subnet_v2" "cluster_subnet" {
   cidr            = "10.10.0.0/24"
   ip_version      = 4
   dns_nameservers = ["213.186.33.99", "8.8.8.8"]  # OVHcloud DNS + Google fallback
+  # Note: 213.186.33.99 is OVHcloud's standard recursive DNS. If it becomes
+  # unreachable, replace with your region's DNS or use 1.1.1.1 as fallback.
 }
 
 resource "openstack_networking_router_v2" "cluster_router" {
