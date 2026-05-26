@@ -68,8 +68,8 @@ PriorityWeightJobSize=100
 PriorityWeightAge=500
 PriorityWeightPartition=100
 PriorityWeightFairshare=1000
-PriorityDecayHalfLife=7-0    # jobs decay toward zero priority over 7 days
-PriorityMaxAge=14-0           # maximum age bonus (2 weeks)
+PriorityDecayHalfLife=7-00:00:00    # jobs decay toward zero priority over 7 days
+PriorityMaxAge=14-00:00:00          # maximum age bonus (2 weeks)
 ```
 
 Key parameters:
