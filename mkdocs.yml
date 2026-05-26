@@ -1,5 +1,10 @@
 site_name: Magic Castle on OVHcloud
 site_url: https://chrstphdm.github.io/magic-castle-ovhcloud
+site_description: >-
+  Community guide for deploying a SLURM HPC cluster on OVHcloud with Magic Castle.
+  Covers Terraform setup, network configuration, bioinformatics stack, Nextflow
+  integration, and production SLURM tuning.
+site_author: Christophe Demay
 repo_url: https://github.com/chrstphdm/magic-castle-ovhcloud
 repo_name: chrstphdm/magic-castle-ovhcloud
 
@@ -21,6 +26,8 @@ theme:
   features:
     - navigation.sections
     - navigation.top
+    - navigation.indexes
+    - toc.integrate
     - search.highlight
     - content.code.copy
 
@@ -30,6 +37,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.details
   - attr_list
   - tables
   - admonition
