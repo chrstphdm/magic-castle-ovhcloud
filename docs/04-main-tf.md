@@ -189,19 +189,17 @@ This is covered in detail in [OVHcloud specifics](05-ovhcloud-specifics.md#persi
 
 ## Network
 
-```hcl
-  network = {
-    type = "arbutus"   # or use an explicit network name
-  }
-```
-
-Or reference the network you created in [Network setup](03-network-setup.md):
+Reference the network you created in [Network setup](03-network-setup.md) by name:
 
 ```hcl
   network = {
     name = "magic-castle-net"
   }
 ```
+
+> **Note**: Magic Castle also supports a `type` key for predefined cloud configurations
+> (e.g. `"arbutus"` on Compute Canada). On OVHcloud, always use `name` to reference
+> the private network you created manually or via Terraform.
 
 ---
 
