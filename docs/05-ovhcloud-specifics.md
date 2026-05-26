@@ -189,3 +189,10 @@ sinfo
 ```
 
 See [Deploy and destroy](09-deployment.md) for a script that waits for Puppet to finish.
+
+---
+
+## References
+
+- [OVHcloud API console](https://api.ovh.com/console/) — interactive explorer for all OVHcloud API endpoints
+- [OpenStack CLI reference](https://docs.openstack.org/python-openstackclient/latest/cli/) — command reference for the `openstack` CLI used throughout this guide

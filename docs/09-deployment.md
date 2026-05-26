@@ -230,3 +230,10 @@ terraform state list                          # find the resource name
 terraform destroy -target=<resource_address>  # destroy just that resource
 terraform destroy                             # retry the full destroy
 ```
+
+---
+
+## References
+
+- [Terraform CLI commands](https://developer.hashicorp.com/terraform/cli/commands) — reference for init, plan, apply, destroy, and state management
+- [Terraform S3 backend](https://developer.hashicorp.com/terraform/language/backend/s3) — configuring remote state storage with an S3-compatible backend

@@ -129,3 +129,10 @@ keep the network infrastructure in a **separate Terraform state** or create it m
 
 This way, you can run `terraform destroy` on the cluster without destroying the network,
 and redeploy faster without waiting for the network to be recreated.
+
+---
+
+## References
+
+- [Terraform OpenStack provider](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs) — resource and data source reference for OpenStack networking
+- [OVHcloud network concepts](https://help.ovhcloud.com/csm/en-public-cloud-network-getting-started?id=kb_article_view&sysparm_article=KB0050360) — private networks, subnets, and routers on OVHcloud Public Cloud

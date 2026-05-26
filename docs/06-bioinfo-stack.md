@@ -206,3 +206,10 @@ apptainer version
 ls /mnt/references/
 df -h /mnt/references
 ```
+
+---
+
+## References
+
+- [Nextflow installation](https://www.nextflow.io/docs/latest/install.html) — official install instructions and requirements
+- [Apptainer documentation](https://apptainer.org/docs/user/latest/) — user guide covering installation, configuration, and container usage

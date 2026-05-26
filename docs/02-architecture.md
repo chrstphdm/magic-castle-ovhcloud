@@ -121,3 +121,9 @@ Default software stack includes:
 
 For bioinformatics workloads, the default stack lacks Nextflow, Apptainer, and S3FS.
 See [Bioinformatics stack](06-bioinfo-stack.md) for how to add them.
+
+---
+
+## References
+
+- [Magic Castle documentation](https://github.com/ComputeCanada/magic_castle/tree/main/docs) — official docs covering architecture, configuration, and deployment

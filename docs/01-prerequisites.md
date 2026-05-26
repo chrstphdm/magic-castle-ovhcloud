@@ -127,3 +127,11 @@ cp main.tf.example main.tf
 ```
 
 You will edit `main.tf` extensively — see [main.tf walkthrough](04-main-tf.md).
+
+---
+
+## References
+
+- [Terraform installation](https://developer.hashicorp.com/terraform/install) — download and install Terraform for your platform
+- [Magic Castle releases](https://github.com/ComputeCanada/magic_castle/releases) — pinned release tags for stable deployments
+- [OVHcloud Public Cloud getting started](https://help.ovhcloud.com/csm/en-public-cloud-compute-getting-started?id=kb_article_view&sysparm_article=KB0051009) — creating your first Public Cloud project

@@ -253,3 +253,10 @@ output "login_ip" {
   value = module.magic_castle.public_ip
 }
 ```
+
+---
+
+## References
+
+- [Magic Castle OVH module variables](https://github.com/ComputeCanada/magic_castle/tree/main/ovh) — input variables and defaults for the OVHcloud module
+- [Terraform module sources](https://developer.hashicorp.com/terraform/language/modules/sources) — how Terraform resolves Git-based and registry module sources

@@ -159,3 +159,10 @@ sacct -u <username> --format=JobID,JobName,Elapsed,State,MaxRSS
 journalctl -u slurmctld -n 100 -f   # on mgmt node
 journalctl -u slurmd -n 100 -f      # on compute nodes
 ```
+
+---
+
+## References
+
+- [SLURM configuration (slurm.conf)](https://slurm.schedmd.com/slurm.conf.html) — full reference for all slurm.conf parameters
+- [SLURM priority/multifactor](https://slurm.schedmd.com/priority_multifactor.html) — how SLURM calculates job priority using multiple factors

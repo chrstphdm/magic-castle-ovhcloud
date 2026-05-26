@@ -228,3 +228,10 @@ apptainer pull docker://quay.io/biocontainers/<tool>:<tag>
 
 Nextflow was likely started before Puppet finished configuring SLURM.
 Wait for `sinfo` to show nodes in `idle` state before submitting pipelines.
+
+---
+
+## References
+
+- [Nextflow SLURM executor](https://www.nextflow.io/docs/latest/executor.html#slurm) — configuring Nextflow to submit jobs via SLURM
+- [Nextflow Apptainer integration](https://www.nextflow.io/docs/latest/container.html#apptainer) — running pipeline processes inside Apptainer containers
